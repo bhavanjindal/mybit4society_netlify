@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsDigest Hub - Your Daily Intelligence Briefing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-newspaper"></i>
+                <span>NewsDigest Hub</span>
+            </div>
+            <div class="nav-links">
+                <a href="#stock-market" class="nav-link">Markets</a>
+                <a href="#ai-updates" class="nav-link">AI & Tech</a>
+                <a href="#geopolitics" class="nav-link">Geopolitics</a>
+                <a href="#startups" class="nav-link">Startups</a>
+                <button id="loginBtn" class="btn btn-primary">
+                    <i class="fas fa-user"></i> Login
+                </button>
+                <div id="userMenu" class="user-menu hidden">
+                    <button class="btn btn-user">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName">User</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#profile"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#subscriptions"><i class="fas fa-envelope"></i> My Subscriptions</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Stay Ahead with <span class="gradient-text">AI-Powered</span> News Digests</h1>
+                <p class="hero-subtitle">Curated daily intelligence briefings on Markets, Technology, Geopolitics, and Business - delivered to your inbox</p>
+                <div class="hero-cta">
+                    <button class="btn btn-large btn-primary" id="getStartedBtn">
+                        Get Started Free
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-large btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Active Readers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Key Categories</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Daily</div>
+                        <div class="stat-label">AI Digests</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore News Categories</h2>
+                <p class="section-subtitle">Choose your interests and get personalized daily digests powered by AI</p>
+            </div>
+
+            <!-- Stock Market Section -->
+            <div class="category-card" id="stock-market">
+                <div class="category-header">
+                    <div class="category-icon stock-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Stock Market & Finance</h3>
+                        <p class="category-description">Daily market analysis, trading insights, and financial trends from global markets</p>
+                    </div>
+                    <button class="btn btn-subscribe" data-category="stock-market">
+                        <i class="fas fa-bell"></i> Subscribe
+                    </button>
+                </div>
+                <div class="category-content">
+                    <div class="news-preview" data-category="stock-market">
+                        <div class="preview-header">
+                            <span class="preview-label">Today's Highlights</span>
+                            <span class="preview-time"><i class="fas fa-clock"></i> <span class="time-ago">Loading...</span></span>
+                        </div>
+                        <div class="preview-content">
+                            <div class="loading-skeleton">
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-tags">
+                        <span class="tag">Stocks</span>
+                        <span class="tag">Crypto</span>
+                        <span class="tag">Commodities</span>
+                        <span class="tag">Forex</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI & Tech Section -->
+            <div class="category-card" id="ai-updates">
+                <div class="category-header">
+                    <div class="category-icon ai-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">AI & Technology Updates</h3>
+                        <p class="category-description">Latest breakthroughs in AI, machine learning, and emerging technologies</p>
+                    </div>
+                    <button class="btn btn-subscribe" data-category="ai-updates">
+                        <i class="fas fa-bell"></i> Subscribe
+                    </button>
+                </div>
+                <div class="category-content">
+                    <div class="news-preview" data-category="ai-updates">
+                        <div class="preview-header">
+                            <span class="preview-label">Today's Highlights</span>
+                            <span class="preview-time"><i class="fas fa-clock"></i> <span class="time-ago">Loading...</span></span>
+                        </div>
+                        <div class="preview-content">
+                            <div class="loading-skeleton">
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Quantum</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geopolitics Section -->
+            <div class="category-card" id="geopolitics">
+                <div class="category-header">
+                    <div class="category-icon geo-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Geopolitics & Global Affairs</h3>
+                        <p class="category-description">International relations, policy changes, and global political developments</p>
+                    </div>
+                    <button class="btn btn-subscribe" data-category="geopolitics">
+                        <i class="fas fa-bell"></i> Subscribe
+                    </button>
+                </div>
+                <div class="category-content">
+                    <div class="news-preview" data-category="geopolitics">
+                        <div class="preview-header">
+                            <span class="preview-label">Today's Highlights</span>
+                            <span class="preview-time"><i class="fas fa-clock"></i> <span class="time-ago">Loading...</span></span>
+                        </div>
+                        <div class="preview-content">
+                            <div class="loading-skeleton">
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-tags">
+                        <span class="tag">Diplomacy</span>
+                        <span class="tag">Trade</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Climate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Startups & Business Section -->
+            <div class="category-card" id="startups">
+                <div class="category-header">
+                    <div class="category-icon startup-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Startups & Business</h3>
+                        <p class="category-description">Venture capital, unicorn companies, and innovative business strategies</p>
+                    </div>
+                    <button class="btn btn-subscribe" data-category="startups">
+                        <i class="fas fa-bell"></i> Subscribe
+                    </button>
+                </div>
+                <div class="category-content">
+                    <div class="news-preview" data-category="startups">
+                        <div class="preview-header">
+                            <span class="preview-label">Today's Highlights</span>
+                            <span class="preview-time"><i class="fas fa-clock"></i> <span class="time-ago">Loading...</span></span>
+                        </div>
+                        <div class="preview-content">
+                            <div class="loading-skeleton">
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-tags">
+                        <span class="tag">Funding</span>
+                        <span class="tag">IPOs</span>
+                        <span class="tag">Innovation</span>
+                        <span class="tag">VC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose NewsDigest Hub?</h2>
+                <p class="section-subtitle">Intelligent news curation powered by cutting-edge AI technology</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>AI-Powered Summaries</h4>
+                    <p>Perplexity AI generates concise, accurate summaries from multiple trusted sources</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Daily Delivery</h4>
+                    <p>Get your personalized digest every morning at your preferred time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h4>Customizable Feeds</h4>
+                    <p>Choose exactly which categories matter to you and adjust anytime</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Secure & Private</h4>
+                    <p>Enterprise-grade security with Auth0 authentication</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Mobile Optimized</h4>
+                    <p>Beautiful reading experience on any device, anywhere</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h4>Reading Analytics</h4>
+                    <p>Track your reading habits and discover new interests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Start Your Free Trial Today</h2>
+                <p class="cta-subtitle">Join thousands of professionals who stay informed with AI-powered news digests</p>
+                <button class="btn btn-large btn-white" id="ctaSignupBtn">
+                    Get Started Now
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <p class="cta-note">No credit card required • 14-day free trial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-brand">
+                        <i class="fas fa-newspaper"></i>
+                        NewsDigest Hub
+                    </h4>
+                    <p>AI-powered intelligence briefings for the modern professional</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Categories</h5>
+                    <ul>
+                        <li><a href="#stock-market">Stock Market</a></li>
+                        <li><a href="#ai-updates">AI & Technology</a></li>
+                        <li><a href="#geopolitics">Geopolitics</a></li>
+                        <li><a href="#startups">Startups</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Connect</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NewsDigest Hub. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Subscription Modal -->
+    <div id="subscriptionModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalCategoryIcon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 id="modalTitle">Subscribe to Daily Digest</h3>
+                <p id="modalDescription">Get AI-powered summaries delivered to your inbox every morning</p>
+            </div>
+            <form id="subscriptionForm" class="subscription-form">
+                <input type="hidden" id="subscriptionCategory" name="category">
+                <div class="form-group">
+                    <label for="subscriptionEmail">Email Address</label>
+                    <input type="email" id="subscriptionEmail" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="deliveryTime">Preferred Delivery Time</label>
+                    <select id="deliveryTime" name="deliveryTime">
+                        <option value="06:00">6:00 AM</option>
+                        <option value="07:00" selected>7:00 AM</option>
+                        <option value="08:00">8:00 AM</option>
+                        <option value="09:00">9:00 AM</option>
+                    </select>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="agreeTerms" required>
+                        I agree to receive daily digests and accept the <a href="#terms">Terms of Service</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-check"></i> Confirm Subscription
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Success!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
